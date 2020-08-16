@@ -1,13 +1,11 @@
 # MERN stack 
-# DevConnector
+# DevConnector 
 
-# MongoDb, react, redux
+Network for developers, built with MERN stack
 
-# Register/ Login
-# Profile
-# Posts
-# Comments
-# Likes/ unlike
+MongoDb, react, redux
+
+ 
 
 
 
