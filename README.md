@@ -3,7 +3,7 @@
 
 Network for developers, built with MERN stack
 
-MongoDb, react, redux
+MongoDB, react, redux
 
  
 
