@@ -19,7 +19,7 @@ const Login = () => {
 
     return (
         <Fragment>
-            <h1 className="large text-primary">Sign Up</h1>
+            <h1 className="large text-primary">Login</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" onSubmit={e => onSubmit}>
         <div className="form-group">
@@ -30,10 +30,6 @@ const Login = () => {
             value={email}
             onChange={onChange} 
             />
-          <small className="form-text"
-            >This site uses Gravatar so if you want a profile image, use a
-            Gravatar email</small
-          >
         </div>
         <div className="form-group">
           <input

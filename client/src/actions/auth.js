@@ -4,7 +4,6 @@ import {
     REGISTER_SUCCESS,
     REGISTER_FAIL
 } from './types';
-//import { application } from 'express';
 
 // Register User
 export const register = ({ name, email, password }) => async dispatch => {
