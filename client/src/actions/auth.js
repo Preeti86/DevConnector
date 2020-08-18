@@ -21,13 +21,13 @@ export const register = ({ name, email, password }) => async dispatch => {
             
             dispatch({
                 type: REGISTER_SUCCESS,
-                payload: res.data
+                payload: res.data,
             });
         } catch (err) {
             const errors = err.response.data.errors;
 
             if(errors) {
-                errors.foreach(error => dispatch(setAlert(error.msg, 'danger')));
+                errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
             }
             dispatch({
                 type: REGISTER_FAIL
