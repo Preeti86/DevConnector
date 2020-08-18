@@ -11,7 +11,7 @@ import Register from './components/auth/register';
 import Login from './components/auth/login';
 import Landing from './components/layout/Landing';
 import './App.css';
-import Alert from './components/layout/alert';
+import Alert from './components/layout/Alert';
 
 const App = () => (
   <Provider store={store}>
