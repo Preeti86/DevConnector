@@ -11,9 +11,7 @@ export const register = ({ name, email, password }) => async dispatch => {
         headers: {
             'Content-Type': 'application/json'
         }
-
     }
-
     const body = JSON.stringify({ name, email, password });
 
     try {

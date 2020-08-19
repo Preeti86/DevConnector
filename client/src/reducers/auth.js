@@ -16,7 +16,7 @@ export default function(state = initialState, action) {
 
     switch(type) {
         case REGISTER_SUCCESS:
-            localStorage.setItem('token, payload.token');
+            localStorage.setItem('token', payload.token);
             return {
                 ...state,
                 ...payload,
@@ -24,7 +24,7 @@ export default function(state = initialState, action) {
                 loading: false
             }
             case REGISTER_FAIL:
-                localStorage.setItem('token, payload.token');
+                localStorage.removeItem('token');
                 return {
                     ...state,
                     token: null,
