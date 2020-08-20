@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
-import { loadstore, loadUser } from './actions/auth';
+import { loadUser } from './actions/auth';
 
 import Register from './components/auth/register';
 import Login from './components/auth/login';
