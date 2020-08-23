@@ -2,6 +2,9 @@ import React, { Fragment, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute';
+
 
 // Redux
 import { Provider } from 'react-redux';
@@ -36,6 +39,8 @@ const App = () => {
       <Switch>
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
+        <PrivateRoute path="/dashboard" component={Dashboard}/>
+
       </Switch>
     </section>
   </Fragment>
