@@ -9,7 +9,6 @@ import {
 
 } from '../actions/types';
 
-
 const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
@@ -50,5 +49,5 @@ export default function(state = initialState, action) {
                 };    
             default:
                 return state;              
-    }
-}
+    };
+};
