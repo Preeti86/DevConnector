@@ -242,14 +242,18 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 // @route       PUT api/profile/education
 // @desc        Add profile education
 // @access      Private
-router.put('/education', [ auth, [
+router.put(
+    '/education', 
+    [ 
+        auth, 
+    [
     check('school', 'School is required')
         .not()
         .isEmpty(),
     check('degree', 'Degree is required')
         .not()
         .isEmpty(),
-    check('fieldofStudy', 'Field of study is required')
+    check('fieldofstudy', 'Field of study is required')
         .not()
         .isEmpty(),
     check('from', 'From is required')
