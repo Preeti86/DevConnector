@@ -30,10 +30,6 @@ const AddExperience = ({ addExperience, history}) => {
     const onChange = e => 
         setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const onSubmit = e => {
-        e.preventDefault();
-        addExperience( formData, history )
-    }
     return (
         <Fragment>
             <h1 className="large text-primary">
