@@ -7,6 +7,8 @@ const config = require('config');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
+
 
 // @route       GET api/profile/me
 // @desc        Get current users profile
@@ -149,6 +151,7 @@ router.get(
 router.delete('/', auth, async (req, res) => {
     try {
         // @todo - remove users posts
+        await Post.deleteMany({ user: req.user.id});
 
         // Remove profile
         await Profile.findOneAndRemove({ user: req.user.id });
@@ -225,8 +228,9 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
         const profile = await Profile.findOne({ user: req.user.id });
 
         // Get remove index
-        const removeIndex = profile.experience.map(item.id).indexOf
-        (req.params.exp_id);
+        const removeIndex = profile.experience
+        .map(item => item.id)
+        .indexOf(req.params.exp_id);
 
         profile.experience.splice(removeIndex, 1);
 
@@ -300,15 +304,15 @@ router.put(
     }
 });
 
-// @route       DELETE api/profile/experience/:exp_id
-// @desc        DELETE profile experience from profile
+// @route       DELETE api/profile/education/:edu_id
+// @desc        DELETE profile education from profile
 // @access      Private
-router.delete('/education/:exp_id', auth, async (req, res) => {
+router.delete('/education/:edu_id', auth, async (req, res) => {
     try {
         const profile = await Profile.findOne({ user: req.user.id });
 
         // Get remove index
-        const removeIndex = profile.education.map(item.id).indexOf
+        const removeIndex = profile.education.map(item => item.id).indexOf
         (req.params.edu_id);
 
         profile.education.splice(removeIndex, 1);
