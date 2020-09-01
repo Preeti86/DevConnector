@@ -6,10 +6,11 @@ import { connect } from 'react-redux';
 
 export const Landing = ({ isAuthenticated }) => {
     if (isAuthenticated){
-      return <Redirect to='/dashboard' />
+      return <Redirect to='/dashboard' />;
     }  
+
     return (
-        <section className='landing'>
+      <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
           <h1 className='x-large'>Developer Connector</h1>
@@ -32,7 +33,7 @@ export const Landing = ({ isAuthenticated }) => {
 };
 
 Landing.prototypes =  {
-isAuthenticated: PropTypes.bool,
+  isAuthenticated: PropTypes.bool
 };
 
 const mapStateToProps = state => ({

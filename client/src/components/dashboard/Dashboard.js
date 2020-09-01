@@ -16,7 +16,7 @@ const Dashboard = ({
     profile: { profile, loading }}) => {
     useEffect(() => {
         getCurrentProfile();
-    }, []);
+    }, [getCurrentProfile]);
     return loading && profile === null ? (
     <Spinner/> 
     ) :( 
@@ -58,6 +58,6 @@ Dashboard.propTypes = {
 const mapStateToProps = state => ({
     auth: state.auth,
     profile: state.profile
-})
+});
 
 export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Dashboard);
