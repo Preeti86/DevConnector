@@ -56,7 +56,7 @@ const ProfileTop = ({ profile: {
     );
 };
 
-ProfileTop.prototype = {
+ProfileTop.prototypes = {
     profile: PropTypes.object.isRequired
 };
 
