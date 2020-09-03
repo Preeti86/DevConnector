@@ -26,7 +26,6 @@ export const loadUser = () => async dispatch => {
             payload: res.data
         });
         
-        dispatch(loadUser());
     } catch (err) {
         dispatch({
             type: AUTH_ERROR
@@ -80,7 +79,6 @@ export const login = (email, password) => async dispatch => {
                 payload: res.data,
             });
 
-            dispatch(loadUser());
         } catch (err) {
             const errors = err.response.data.errors;
 

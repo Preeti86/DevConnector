@@ -11,7 +11,6 @@ import AddEducation from './components/profile-form/AddEducation';
 import Profiles from './components/Profiles/Profiles';
 import Profile from './components/profile/Profile';
 
-
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -19,6 +18,7 @@ import { loadUser } from './actions/auth';
 
 import Register from './components/auth/register';
 import Login from './components/auth/login';
+import { LOGOUT } from './actions/types';
 import Landing from './components/layout/Landing';
 import './App.css';
 import Alert from './components/layout/Alert';
@@ -48,8 +48,7 @@ const App = () => {
         <PrivateRoute path="/dashboard" component={Dashboard}/>
         <PrivateRoute path="/create-profile" component={CreateProfile}/>
         <PrivateRoute path="/edit-profile" component={EditProfile}/>
-        <PrivateRoute path="/edit-profile" component={EditProfile}/>
-        <PrivateRoute path="/profiles" component={Profiles}/>
+        <Route path="/profiles" component={Profiles}/>
         <PrivateRoute path="/profile/:id" component={Profile}/>
         <PrivateRoute path="/add-experience" component={AddExperience}/>
         <PrivateRoute path="/add-education" component={AddEducation}/> 

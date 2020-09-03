@@ -47,7 +47,7 @@ const CreateProfile = ({ createProfile, history }) => {
     }
     return (
         <Fragment>
-            <h1 classNameName="large text-primary">
+            <h1 className="large text-primary">
             Create Your Profile
         </h1>
         <p className="lead">
