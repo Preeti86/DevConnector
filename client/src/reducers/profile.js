@@ -48,9 +48,9 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 repos: payload,
-                loading: false
-
-            }
+                loading: false,
+                profile: null
+            };
         default: 
         return state;
     }
