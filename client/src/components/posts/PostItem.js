@@ -33,7 +33,9 @@ const PostItem = ({
                     <p className="post-date">
                         Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
                     </p>
-                    {showActions && <Fragment>
+
+                    {showActions && ( 
+                    <Fragment>
                         <button
                          onClick={e => addLike(_id)} 
                          type="button" 
@@ -50,8 +52,8 @@ const PostItem = ({
                     >
                     <i className="fas fa-thumbs-down"></i>
                     </button>
-                    <Link to={`/posts/${_id}`} className="btn btn-primary">
-                    Discussion {comments.length > 0 && (
+                    <Link to={`/post/${_id}`} className="btn btn-primary">
+                    Discussion {' '} {comments.length > 0 && (
                         <span className='comment-count'>{comments.length}</span>
                     )}    
                     </Link>
@@ -64,22 +66,22 @@ const PostItem = ({
                         <i className="fas fa-times"></i>
                     </button>
                     )}  
-                    </Fragment>}
+                    </Fragment>)}
                 </div>
                 </div>
     )
-}
+};
 PostItem.defaultProps = {
     showActions: true
-} 
+}; 
 
 PostItem.propTypes = {
     post: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
     addLike: PropTypes.func.isRequired,
     removeLike: PropTypes.func.isRequired,
-    deletePost: PropTypes.func.isRequired
-
+    deletePost: PropTypes.func.isRequired,
+    showActions: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
