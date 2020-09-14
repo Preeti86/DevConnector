@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
+const Profile = require("../../models/Profile");
 
 const Post = require('../../models/Post');
 const User = require('../../models/User');
@@ -52,10 +53,10 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
-/* // @route    GET api/posts/:id
+// @route    GET api/posts/:id
 // @desc     Get post by ID
 // @access   Private
-router.get('/:id', [auth, checkObjectId('id')], async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     
@@ -69,7 +70,7 @@ router.get('/:id', [auth, checkObjectId('id')], async (req, res) => {
 
     res.status(500).send('Server Error');
   }
-}); */
+}); 
 
 // @route       DELETE api/posts/:id
 // @desc        Delete all post
