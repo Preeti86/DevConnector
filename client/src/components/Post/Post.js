@@ -22,10 +22,10 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
                 Back To posts
             </Link>
         <PostItem post={post} showActions={false} />
-        <CommentForm  postId={post._id} />
+        <CommentForm  postId={post.id} />
         <div className="comments">
             {post.comment.map(comment => (
-                <CommentItem key={comment._id} comment={comment} postId={post._id} />
+                <CommentItem key={comment.id} comment={comment} postId={post.id} />
             ))}
         </div>
         </Fragment>
