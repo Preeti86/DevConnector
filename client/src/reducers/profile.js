@@ -49,7 +49,6 @@ export default function (state = initialState, action) {
                 ...state,
                 repos: payload,
                 loading: false,
-                profile: null
             };
         default: 
         return state;
