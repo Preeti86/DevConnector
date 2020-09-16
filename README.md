@@ -9,6 +9,8 @@ Node.js, Express, React, Redux, Axios and MongoDB
 - Redux for app state management
 - React Hooks, Async/Await 
 
+- Heroku link https://obscure-waters-64468.herokuapp.com/
+
  
 
 
