@@ -86,7 +86,7 @@ Profile.propTypes = {
     auth: PropTypes.object.isRequired
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     profile: state.profile,
     auth: state.auth
 });

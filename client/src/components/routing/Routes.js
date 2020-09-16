@@ -15,19 +15,18 @@ import Register from '../auth/register';
 import Login from '../auth/login';
 import Alert from '../layout/Alert';
 
-
-export const Routes = () => {
+export const Routes = props => {
     return (
         <section className="container">
           <Alert/>
           <Switch>
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login}/>
+            <Route path="/profiles" component={Profiles}/>
+            <Route path="/profile/:id" component={Profile}/>
             <PrivateRoute path="/dashboard" component={Dashboard}/>
             <PrivateRoute path="/create-profile" component={CreateProfile}/>
-            <PrivateRoute path="/edit-profile" component={EditProfile}/>
-            <Route path="/profiles" component={Profiles}/>
-            <PrivateRoute path="/profile/:id" component={Profile}/>
+            <PrivateRoute path="/edit-profile" component={EditProfile}/>           
             <PrivateRoute path="/add-experience" component={AddExperience}/>
             <PrivateRoute path="/add-education" component={AddEducation}/>
             <PrivateRoute path="/posts" component={Posts}/> 
@@ -35,5 +34,6 @@ export const Routes = () => {
             <Route component={NotFound}></Route> 
           </Switch>
         </section>
-    )
-}
+    );
+};
+

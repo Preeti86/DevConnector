@@ -32,8 +32,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading }}) => {
             </Fragment> 
             )}
         </Fragment> 
-        );
-    
+        ); 
     };
 
 Profiles.propTypes = {

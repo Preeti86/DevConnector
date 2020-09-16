@@ -48,7 +48,7 @@ export const getProfiles = () => async dispatch => {
 };
 
 // Get profile by ID
-export const getProfileById = (userId) => async dispatch => {
+export const getProfileById = userId => async dispatch => {
     try {
         const res = await axios.get(`/api/profile/user/${userId}`);
 
@@ -109,7 +109,7 @@ export const createProfile = (formData, history, edit = false)  => async dispatc
             }
 
             dispatch({
-                type: GET_PROFILE,
+                type: PROFILE_ERROR,
                 payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
@@ -141,7 +141,7 @@ export const addExperience = ( formData, history) => async dispatch => {
             }
 
             dispatch({
-                type: UPDATE_PROFILE,
+                type: PROFILE_ERROR,
                 payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
@@ -173,7 +173,7 @@ export const addEducation = ( formData, history ) => async dispatch => {
             }
 
             dispatch({
-                type: UPDATE_PROFILE,
+                type: PROFILE_ERROR,
                 payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
